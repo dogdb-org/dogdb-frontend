@@ -35,7 +35,7 @@ Thank you for considering contributing to our project! Here are the steps you ne
 
     ```bash
     # Run formatting
-    npm run format
+    npm run format:fix
 
     # Run tests
     npm run test
