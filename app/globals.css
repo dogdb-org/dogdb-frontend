@@ -4,20 +4,21 @@
  
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --background: #FFFFFF;
+    --foreground: #FFFFFF;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-background: #FFFFFF;
+    --card-foreground: #FFFFFF;
  
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
+    --popover: #D3D3D3;
+    --popover-foreground: #FFFFFF;
  
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --primary: #FFAD0A; /* Buttons and focus points */
+    --primary-foreground: #F5EDD9; /* Input backgrounds and non-clickable buttons */
  
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    --secondary-body: #211708; /* Common body text and icon colours */
+    --secondary-article: #B5872E; /* Card text */
+    --secondary-foreground: #FFFFFF;
  
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
@@ -29,40 +30,46 @@
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
+    --input: #F5EDD9;
     --ring: 0 0% 3.9%;
  
-    --radius: 0.5rem;
+    --radius-image: 12px; /* Border radius for images */
+    --radius-button: 16px; /* Border radius for buttons */
   }
  
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
+    /* To change when we figure out a dark mode design, temporary just to see transition */
+    --background: #211708;
+    --foreground: #211708;
+
+    --card-background: #111111;
+    --card-foreground: #111111;
  
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --popover: #111111;
+    --popover-foreground: #D3D3D3;
  
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --primary: #FFAD0A; /* Buttons and focus points */
+    --primary-foreground: #F5EDD9; /* Input backgrounds and non-clickable buttons */
  
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
+    --secondary-body: #FFFFFF; /* Common body text and icon colours */
+    --secondary-article: #D3D3D3; /* Card text */
+    --secondary-foreground: #FFFFFF;
  
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
  
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
  
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
- 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: #F5EDD9;
+    --ring: 0 0% 3.9%;
  
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --radius-image: 12px;
+    --radius-button: 16px;
   }
 }
  
