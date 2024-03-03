@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/Theme/ThemeProvider'
+import StoreProvider from '@/components/StoreProvider/StoreProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,7 +26,7 @@ export default function RootLayout({
                     disableTransitionOnChange
                     themes={['light', 'dark']}
                 >
-                    {children}
+                    <StoreProvider>{children}</StoreProvider>
                 </ThemeProvider>
             </body>
         </html>
