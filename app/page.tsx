@@ -11,7 +11,7 @@ export default function Home() {
     const dispatch = useAppDispatch()
 
     return (
-        <main className='bg-primar min-h-screen p-24'>
+        <main className='bg-primary min-h-screen p-24'>
             <div className='flex justify-center gap-8'>
                 <h1 className='text-black dark:text-white'>DogDB Frontend</h1>
                 <Button onClick={() => setTheme('light')}>Light Mode</Button>
