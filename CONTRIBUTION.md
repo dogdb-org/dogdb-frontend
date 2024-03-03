@@ -4,24 +4,25 @@ Thank you for considering contributing to our project! Here are the steps you ne
 
 ## Getting Started
 
-1. **Clone the Repository**
+1.  **Clone the Repository**
 
-   To contribute to the project, first clone the repository to your local machine using:
-
-   ```bash
-   git clone [repository URL]
-   ```
-
-2. **Create a Branch**
-
-    Before making your changes, create a new branch based on the issue you are working on. Follow our branch naming convention, which categorizes branches by the component or view they relate to, for example: `header/navigation`, `header/dark- 
-    mode-toggle`.
-
-    To create and switch to a new branch:
+    To contribute to the project, first clone the repository to your local machine using:
 
     ```bash
-    git checkout -b [your-branch-name]
+    git clone [repository URL]
     ```
+
+2.  **Create a Branch**
+
+        Before making your changes, create a new branch based on the issue you are working on. Follow our branch naming convention, which categorizes branches by the component or view they relate to, for example: `header/navigation`, `header/dark-
+
+    mode-toggle`.
+
+        To create and switch to a new branch:
+
+        ```bash
+        git checkout -b [your-branch-name]
+        ```
 
 ## Making Changes
 

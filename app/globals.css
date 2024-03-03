@@ -2,32 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
     :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
+        --background: #ffffff;
+        --foreground: #ffffff;
+
+        --card-background: #ffffff;
+        --card-foreground: #ffffff;
+
+        --popover: #d3d3d3;
+        --popover-foreground: #ffffff;
+
+        --primary: #ffad0a; /* Buttons and focus points */
+        --primary-foreground: #f5edd9; /* Input backgrounds and non-clickable buttons */
+
+        --secondary-body: #211708; /* Common body text and icon colours */
+        --secondary-article: #b5872e; /* Card text */
+        --secondary-foreground: #ffffff;
+
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 0% 89.8%;
+        --input: #f5edd9;
+        --ring: 0 0% 3.9%;
+
+        --radius-image: 12px; /* Border radius for images */
+        --radius-button: 16px; /* Border radius for buttons */
+    }
+
+    .dark {
+        /* To change when we figure out a dark mode design, temporary just to see transition */
+        --background: #211708;
+        --foreground: #211708;
+
+        --card-background: #111111;
+        --card-foreground: #111111;
+
+        --popover: #111111;
+        --popover-foreground: #d3d3d3;
+
+        --primary: #ffad0a; /* Buttons and focus points */
+        --primary-foreground: #f5edd9; /* Input backgrounds and non-clickable buttons */
+
+        --secondary-body: #ffffff; /* Common body text and icon colours */
+        --secondary-article: #d3d3d3; /* Card text */
+        --secondary-foreground: #ffffff;
+
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 0% 89.8%;
+        --input: #f5edd9;
+        --ring: 0 0% 3.9%;
+
+        --radius-image: 12px;
+        --radius-button: 16px;
     }
 }
 
-body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-            to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))
-        )
-        rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-    .text-balance {
-        text-wrap: balance;
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
     }
 }
