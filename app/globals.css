@@ -1,83 +1,83 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
-  :root {
-    --background: #FFFFFF;
-    --foreground: #FFFFFF;
+    :root {
+        --background: #ffffff;
+        --foreground: #ffffff;
 
-    --card-background: #FFFFFF;
-    --card-foreground: #FFFFFF;
- 
-    --popover: #D3D3D3;
-    --popover-foreground: #FFFFFF;
- 
-    --primary: #FFAD0A; /* Buttons and focus points */
-    --primary-foreground: #F5EDD9; /* Input backgrounds and non-clickable buttons */
- 
-    --secondary-body: #211708; /* Common body text and icon colours */
-    --secondary-article: #B5872E; /* Card text */
-    --secondary-foreground: #FFFFFF;
- 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
- 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+        --card-background: #ffffff;
+        --card-foreground: #ffffff;
 
-    --border: 0 0% 89.8%;
-    --input: #F5EDD9;
-    --ring: 0 0% 3.9%;
- 
-    --radius-image: 12px; /* Border radius for images */
-    --radius-button: 16px; /* Border radius for buttons */
-  }
- 
-  .dark {
-    /* To change when we figure out a dark mode design, temporary just to see transition */
-    --background: #211708;
-    --foreground: #211708;
+        --popover: #d3d3d3;
+        --popover-foreground: #ffffff;
 
-    --card-background: #111111;
-    --card-foreground: #111111;
- 
-    --popover: #111111;
-    --popover-foreground: #D3D3D3;
- 
-    --primary: #FFAD0A; /* Buttons and focus points */
-    --primary-foreground: #F5EDD9; /* Input backgrounds and non-clickable buttons */
- 
-    --secondary-body: #FFFFFF; /* Common body text and icon colours */
-    --secondary-article: #D3D3D3; /* Card text */
-    --secondary-foreground: #FFFFFF;
- 
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
- 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
- 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+        --primary: #ffad0a; /* Buttons and focus points */
+        --primary-foreground: #f5edd9; /* Input backgrounds and non-clickable buttons */
 
-    --border: 0 0% 89.8%;
-    --input: #F5EDD9;
-    --ring: 0 0% 3.9%;
- 
-    --radius-image: 12px;
-    --radius-button: 16px;
-  }
+        --secondary-body: #211708; /* Common body text and icon colours */
+        --secondary-article: #b5872e; /* Card text */
+        --secondary-foreground: #ffffff;
+
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 0% 89.8%;
+        --input: #f5edd9;
+        --ring: 0 0% 3.9%;
+
+        --radius-image: 12px; /* Border radius for images */
+        --radius-button: 16px; /* Border radius for buttons */
+    }
+
+    .dark {
+        /* To change when we figure out a dark mode design, temporary just to see transition */
+        --background: #211708;
+        --foreground: #211708;
+
+        --card-background: #111111;
+        --card-foreground: #111111;
+
+        --popover: #111111;
+        --popover-foreground: #d3d3d3;
+
+        --primary: #ffad0a; /* Buttons and focus points */
+        --primary-foreground: #f5edd9; /* Input backgrounds and non-clickable buttons */
+
+        --secondary-body: #ffffff; /* Common body text and icon colours */
+        --secondary-article: #d3d3d3; /* Card text */
+        --secondary-foreground: #ffffff;
+
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 0% 89.8%;
+        --input: #f5edd9;
+        --ring: 0 0% 3.9%;
+
+        --radius-image: 12px;
+        --radius-button: 16px;
+    }
 }
- 
+
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
 }
