@@ -13,6 +13,7 @@ interface menu {
     link: string
 }
 function MobileNav() {
+    // TODO: this should be moved to constants file
     const menus: menu[] = [
         {
             id: 1,
@@ -20,22 +21,22 @@ function MobileNav() {
             link: '/',
         },
         {
-            id: 1,
+            id: 2,
             menuName: 'Breeds',
             link: '/breeds',
         },
         {
-            id: 1,
+            id: 3,
             menuName: 'Quiz',
             link: '/quiz',
         },
         {
-            id: 1,
+            id: 4,
             menuName: 'Adopt',
             link: '/adopt',
         },
         {
-            id: 1,
+            id: 5,
             menuName: 'Donate',
             link: '/donate',
         },
