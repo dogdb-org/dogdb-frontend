@@ -1,5 +1,5 @@
 function page() {
-  return <div className="">quiz page</div>;
+    return <div className=''>quiz page</div>
 }
 
-export default page;
+export default page
