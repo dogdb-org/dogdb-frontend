@@ -1,5 +1,5 @@
 function BreedCard() {
-  const test = "halllo";
+    const test = 'halllo'
 }
 
-export default BreedCard;
+export default BreedCard

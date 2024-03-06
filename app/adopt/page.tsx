@@ -1,5 +1,5 @@
 function page() {
-  return <div className="">adopt page</div>;
+    return <div className=''>adopt page</div>
 }
 
-export default page;
+export default page
