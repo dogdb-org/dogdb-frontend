@@ -18,7 +18,7 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang='en'>
+        <html lang='en' suppressHydrationWarning>
             <body className={`${inter.className} bg-background`}>
                 <ThemeProvider
                     attribute='class'
@@ -27,8 +27,10 @@ export default function RootLayout({
                     disableTransitionOnChange
                     themes={['light', 'dark']}
                 >
-                    {/* <Header /> */}
-                    <StoreProvider>{children}</StoreProvider>
+                    <StoreProvider>
+                        <Header />
+                        {children}
+                    </StoreProvider>
                 </ThemeProvider>
             </body>
         </html>

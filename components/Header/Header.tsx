@@ -17,22 +17,22 @@ function Header() {
             link: '/',
         },
         {
-            id: 1,
+            id: 2,
             menuName: 'Breeds',
             link: '/breeds',
         },
         {
-            id: 1,
+            id: 3,
             menuName: 'Quiz',
             link: '/quiz',
         },
         {
-            id: 1,
+            id: 4,
             menuName: 'Adopt',
             link: '/adopt',
         },
         {
-            id: 1,
+            id: 5,
             menuName: 'Donate',
             link: '/donate',
         },
