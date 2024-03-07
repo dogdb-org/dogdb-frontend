@@ -1,3 +1,3 @@
 function BreedGrid() {}
 
-export default BreedGrid;
+export default BreedGrid
