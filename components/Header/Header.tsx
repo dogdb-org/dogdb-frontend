@@ -38,15 +38,15 @@ function Header() {
         },
     ]
     return (
-        <main className=' flex items-center justify-between bg-background p-3 text-black dark:text-white'>
+        <main className=' font-main flex items-center justify-between bg-background p-3 text-black dark:text-white'>
             <div className='flex items-center gap-2'>
                 <Image src={logo} alt='logo' />
-                <h1 className='text-2xl font-bold'>dogdb</h1>
+                <h1 className='font-logo text-2xl font-bold'>dogdb</h1>
             </div>
             <div className='flex items-center gap-3 font-semibold max-md:hidden'>
                 <div className='flex items-center gap-10 max-lg:gap-4'>
                     {menus.map((menu) => (
-                        <ul key={menu.id} className=''>
+                        <ul key={menu.id}>
                             <li>
                                 <Link href={menu.link}>{menu.menuName}</Link>
                             </li>
