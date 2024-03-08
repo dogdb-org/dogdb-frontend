@@ -38,7 +38,7 @@ function Header() {
         },
     ]
     return (
-        <main className=' font-main flex items-center justify-between bg-background p-3 text-black dark:text-white'>
+        <main className=' flex items-center justify-between bg-background p-3 font-main text-black dark:text-white'>
             <div className='flex items-center gap-2'>
                 <Image src={logo} alt='logo' />
                 <h1 className='font-logo text-2xl font-bold'>dogdb</h1>
