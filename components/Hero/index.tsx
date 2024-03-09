@@ -1,22 +1,26 @@
 'use client'
 import Image from 'next/image'
 import HeroImg from '@/assets/image/hero.jpg'
-import { IoSearchOutline } from "react-icons/io5";
-import { Button } from '../ui/button'
+import SearchBar from '../ui/search-bar'
+
 function Hero() {
     return (
-        <section className='bg-gray-300 mx-48 my-12'>
-            <div className='flex justify-around'>
-            <Image src={HeroImg} alt='an image of dog running with joy.' className='rounded-img w-3/6 h-72'></Image>
-            <div className='px-8'>
-                <h1 className='font-main text-black text-5xl'>Find your perfect dog breed.</h1>
-                <p className='font-sans text-black'>Discover the ideal companion for your lifestyle.</p>
-                <div className='flex bg-input w-fit rounded-btn'>
-                    <IoSearchOutline className=''/>
-                    <input type='text' placeholder='Search 198 dog breeds' className='bg-input'></input>
-                    <Button  variant='outline' className=' rounded-full bg-primary'>Search</Button>
+        <section className='mx-4 my-8 w-10/12 text-black dark:text-white md:m-auto md:my-16'>
+            <div className='flex flex-col justify-around pl-20 md:flex-row'>
+                <Image
+                    src={HeroImg}
+                    alt='an image of dog running with joy.'
+                    className='h-80 w-full rounded-img md:w-3/5'
+                ></Image>
+                <div className='flex flex-col items-center p-4 md:items-start md:p-8 lg:w-5/12'>
+                    <h1 className='font-logo text-3xl  font-bold leading-10 md:text-5xl md:leading-tight'>
+                        Find your perfect dog breed.
+                    </h1>
+                    <p className='font-sans text-lg font-medium leading-8 md:leading-10'>
+                        Discover the ideal companion for your lifestyle.
+                    </p>
+                    <SearchBar />
                 </div>
-            </div>
             </div>
         </section>
     )
