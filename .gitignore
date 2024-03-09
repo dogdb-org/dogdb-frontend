@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+/.swc
+
 # dependencies
 /node_modules
 /.pnp
@@ -34,5 +36,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 =======
-next-env.d.ts
+next-env.d.ts 
 
+# personal vscode settings
+*.vscode
