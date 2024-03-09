@@ -26,7 +26,7 @@ function Header() {
                 </div>
                 <div className=' flex flex-row gap-8'>
                     <div className='hidden md:flex'>
-                        <ul className='flex gap-[1.2rem] font-main'>
+                        <ul className='font-main flex gap-[1.2rem]'>
                             {navLinks.map((navLink, index) => (
                                 <li key={index}>
                                     <NavLink href={navLink}>
@@ -110,7 +110,7 @@ function Header() {
 
                             <div className=' mt-8 flex flex-col gap-6'>
                                 <div className='flex'>
-                                    <ul className='-mx-2 flex flex-col gap-[1.2rem] font-main'>
+                                    <ul className='font-main -mx-2 flex flex-col gap-[1.2rem]'>
                                         {navLinks.map((navLink, index) => (
                                             <li key={index}>
                                                 <NavLink href={navLink}>
