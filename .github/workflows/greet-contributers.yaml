@@ -1,25 +1,25 @@
 name: Greet Contributors
 on:
-  fork:
-  push:
-    branches: [master]
-  issues:
-    types: [opened]
-  issue_comment:
-    types: [created]
-  pull_request_target:
-    types: [opened]
-  pull_request_review_comment:
-    types: [created]
+    fork:
+    push:
+        branches: [master]
+    issues:
+        types: [opened]
+    issue_comment:
+        types: [created]
+    pull_request_target:
+        types: [opened]
+    pull_request_review_comment:
+        types: [created]
 
 jobs:
-  welcome:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: dogdb
-        with:
-          # github-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: "<h3>Hey! thank you for opening an Issue 🎉.</h3>"
-          pr-message: "<h3>Hey! thank you for opening a Pull Request 🎉.</h3>"
-          footer: "Thankyou for contributing to DogDB, Happy, Open Source!</b>"
+    welcome:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: dogdb
+              with:
+                  # github-token: ${{ secrets.GITHUB_TOKEN }}
+                  issue-message: '<h3>Hey! thank you for opening an Issue 🎉.</h3>'
+                  pr-message: '<h3>Hey! thank you for opening a Pull Request 🎉.</h3>'
+                  footer: 'Thankyou for contributing to DogDB, Happy, Open Source!</b>'
