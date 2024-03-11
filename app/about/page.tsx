@@ -1,5 +1,5 @@
-function page() {
-    return <div className=''>about page</div>
+function Page() {
+    return <div className=''>about Page</div>
 }
 
-export default page
+export default Page

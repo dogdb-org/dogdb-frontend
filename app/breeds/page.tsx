@@ -1,5 +1,5 @@
-function page() {
-    return <div className=''>breeds page</div>
+function Page() {
+    return <div className=''>breeds Page</div>
 }
 
-export default page
+export default Page
