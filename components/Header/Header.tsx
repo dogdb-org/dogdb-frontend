@@ -6,7 +6,6 @@ import Account from '@/assets/image/account.svg'
 import NavLink from './NavLinks'
 import Link from 'next/link'
 import { Button } from '../ui/button'
-import { BellIcon, ChatBubbleIcon } from '@radix-ui/react-icons'
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
 import { navLinks } from '@/lib/utils/constant'
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
@@ -16,7 +15,7 @@ import { FaArrowRightLong } from 'react-icons/fa6'
 function Header() {
     const isLoggedIn = false
     return (
-        <header className='sticky inset-0 inset-y-0 right-0 w-full border-b bg-background px-4 py-3 text-secondary-body dark:text-white md:px-12'>
+        <header className='text-secondary-body sticky inset-0 inset-y-0 right-0 w-full border-b bg-background px-4 py-3 dark:text-white md:px-12'>
             <nav className='flex items-center justify-between'>
                 <Link href='/'>
                     <div className='flex items-center justify-between space-x-3'>
