@@ -1,5 +1,4 @@
-
-# Contributor Code of Conduct 
+# Contributor Code of Conduct
 
 We as members, contributors, and leaders promise to make participation in our
 community a harassment-free experience for everyone, regardless of age, body
@@ -10,4 +9,3 @@ and orientation.
 
 We pledge to act and interact in ways that contribute to an open, welcoming,
 diverse, inclusive, and healthy community.
-
