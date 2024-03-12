@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import Logo from '@/assets/image/logo.png'
+import Logo from '@/assets/image/logo-light.svg'
+import Account from '@/assets/image/account.svg'
 import NavLink from './NavLinks'
+import Link from 'next/link'
 import { Button } from '../ui/button'
-import { BellIcon, ChatBubbleIcon } from '@radix-ui/react-icons'
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
 import { navLinks } from '@/lib/utils/constant'
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
@@ -12,82 +13,61 @@ import { MenuIcon } from 'lucide-react'
 import { FaArrowRightLong } from 'react-icons/fa6'
 
 function Header() {
+    const isLoggedIn = false
     return (
-        <header className='sticky inset-0 inset-y-0 right-0 my-2 w-full border-b bg-background px-4 text-black dark:text-white md:px-12'>
+        <header className='text-secondary-body sticky inset-0 inset-y-0 right-0 w-full border-b bg-background px-4 py-3 dark:text-white md:px-12'>
             <nav className='flex items-center justify-between'>
-                <div className='flex items-center justify-between gap-2 p-1.5'>
-                    <Image
-                        src={Logo}
-                        alt='an image of a dog in an orange color'
-                        width={48}
-                        height={48}
-                    />
-                    <h1 className='font-logo text-2xl font-bold'>dogdb</h1>
-                </div>
+                <Link href='/'>
+                    <div className='flex items-center justify-between space-x-3'>
+                        <Image
+                            src={Logo}
+                            alt='an image of a dog in an orange color'
+                            width={40}
+                            height={40}
+                            priority
+                        />
+                        <h1 className='font-logo text-xl font-bold'>dogdb</h1>
+                    </div>
+                </Link>
                 <div className=' flex flex-row gap-8'>
                     <div className='hidden md:flex'>
                         <ul className='flex gap-[1.2rem] font-main'>
                             {navLinks.map((navLink, index) => (
                                 <li key={index}>
-                                    <NavLink href={navLink}>
-                                        {navLink === '/'
-                                            ? 'Home'
-                                            : navLink
-                                                  .split('/')[1]
-                                                  .charAt(0)
-                                                  .toUpperCase() +
-                                              navLink.split('/')[1].slice(1)}
+                                    <NavLink href={navLink.src}>
+                                        {navLink.title}
                                     </NavLink>
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    <div className='hidden md:flex md:md:flex-row md:gap-8'>
-                        <div className='flex flex-row gap-2'>
-                            <Button
-                                variant='outline'
-                                className=' rounded-full bg-primary'
-                            >
-                                Login
-                            </Button>
-                            <Button
-                                variant='outline'
-                                className=' rounded-full bg-primary-foreground'
-                            >
-                                Sign up
-                            </Button>
-                        </div>
-                        <div className=' flex flex-row gap-2'>
-                            <Button
-                                size='icon'
-                                variant='outline'
-                                className=' rounded-full bg-primary-foreground'
-                            >
-                                <BellIcon />
-                            </Button>
-                            <Button
-                                size='icon'
-                                variant='outline'
-                                className=' rounded-full bg-primary-foreground'
-                            >
-                                <ChatBubbleIcon />
-                            </Button>
-                        </div>
+                    <div className='hidden cursor-pointer md:flex md:flex-row md:items-center md:gap-8'>
                         <div>
-                            <Avatar>
-                                <AvatarImage
-                                    className=' h-10 w-10 rounded-full'
-                                    src='https://pbs.twimg.com/profile_images/1754602039311478784/EmA-O4v4_400x400.jpg'
-                                />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
+                            {isLoggedIn ? (
+                                <Avatar>
+                                    <AvatarImage
+                                        className='h-10 w-10 rounded-full'
+                                        src='https://pbs.twimg.com/profile_images/1754602039311478784/EmA-O4v4_400x400.jpg'
+                                    />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                </Avatar>
+                            ) : (
+                                <Avatar>
+                                    <Image
+                                        className='h-10 w-10 rounded-full'
+                                        src={Account}
+                                        alt={'Account Avatar'}
+                                        priority
+                                    />
+                                </Avatar>
+                            )}
                         </div>
                     </div>
                 </div>
 
                 {/* Mobile navigation */}
-                <div className='text-black dark:text-white md:hidden'>
+                <div className='cursor-pointer text-black dark:text-white md:hidden'>
                     <Sheet>
                         <SheetTrigger asChild>
                             <MenuIcon />
@@ -99,30 +79,22 @@ function Header() {
                             <div className='top-2'>
                                 <Avatar>
                                     <AvatarImage
-                                        className=' h-10 w-10 rounded-full'
+                                        className='h-10 w-10 rounded-full'
                                         src='https://pbs.twimg.com/profile_images/1754602039311478784/EmA-O4v4_400x400.jpg'
                                     />
                                     <AvatarFallback>CN</AvatarFallback>
                                 </Avatar>
                             </div>
 
-                            <hr className=' mt-6 w-full flex-grow' />
+                            <hr className='mt-6 w-full flex-grow' />
 
-                            <div className=' mt-8 flex flex-col gap-6'>
+                            <div className='mt-8 flex flex-col gap-6'>
                                 <div className='flex'>
                                     <ul className='-mx-2 flex flex-col gap-[1.2rem] font-main'>
                                         {navLinks.map((navLink, index) => (
                                             <li key={index}>
-                                                <NavLink href={navLink}>
-                                                    {navLink === '/'
-                                                        ? 'Home'
-                                                        : navLink
-                                                              .split('/')[1]
-                                                              .charAt(0)
-                                                              .toUpperCase() +
-                                                          navLink
-                                                              .split('/')[1]
-                                                              .slice(1)}
+                                                <NavLink href={navLink.src}>
+                                                    {navLink.title}
                                                 </NavLink>
                                             </li>
                                         ))}
@@ -141,23 +113,6 @@ function Header() {
                                             <span>
                                                 <FaArrowRightLong />
                                             </span>
-                                        </Button>
-                                    </div>
-
-                                    <div className=' flex flex-row gap-4'>
-                                        <Button
-                                            size='icon'
-                                            variant='outline'
-                                            className=' rounded-full bg-primary-foreground'
-                                        >
-                                            <BellIcon />
-                                        </Button>
-                                        <Button
-                                            size='icon'
-                                            variant='outline'
-                                            className=' rounded-full bg-primary-foreground'
-                                        >
-                                            <ChatBubbleIcon />
                                         </Button>
                                     </div>
                                 </div>
