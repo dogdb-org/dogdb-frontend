@@ -10,10 +10,15 @@ const config = {
     ],
     prefix: '',
     theme: {
+        screens: {
+            md: '800px',
+            '2xl': '1400px',
+        },
         container: {
             center: true,
             padding: '2rem',
             screens: {
+                md: '800px',
                 '2xl': '1400px',
             },
         },
@@ -29,9 +34,9 @@ const config = {
                     foreground: 'var(--primary-foreground)',
                 },
                 secondary: {
-                    'secondary-body': 'var(--secondary-body)',
-                    'secondary-article': 'var(--secondary-article)',
-                    'secondary-foreground': 'var(--secondary-foreground)',
+                    body: 'var(--secondary-body)',
+                    article: 'var(--secondary-article)',
+                    foreground: 'var(--secondary-foreground)',
                 },
                 destructive: {
                     DEFAULT: 'hsl(var(--destructive))',
@@ -55,7 +60,6 @@ const config = {
                 },
             },
             borderRadius: {
-                lg: 'var(--radius)',
                 md: 'calc(var(--radius) - 2px)',
                 sm: 'calc(var(--radius) - 4px)',
                 img: 'var(--radius-image)',

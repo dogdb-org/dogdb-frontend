@@ -1,0 +1,16 @@
+.breedCard {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.breedCard h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.breedCard p {
+    font-size: 16px;
+}
