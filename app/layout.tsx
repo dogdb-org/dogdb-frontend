@@ -41,7 +41,7 @@ export default function RootLayout({
             suppressHydrationWarning
             className={`${inter.variable} ${league_spartan.variable} ${plus_jakarta_sans.variable}`}
         >
-            <body>
+            <body className='overflow-y-scroll'>
                 <ThemeProvider
                     attribute='class'
                     defaultTheme='system'

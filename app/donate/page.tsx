@@ -1,5 +1,5 @@
-function page() {
-    return <div className=''>donate page</div>
+function Page() {
+    return <div className=''>donate Page</div>
 }
 
-export default page
+export default Page
