@@ -2,7 +2,7 @@ name: Greet Contributors
 on:
     fork:
     push:
-        branches: [master]
+        branches: [main]
     issues:
         types: [opened]
     issue_comment:
@@ -22,4 +22,4 @@ jobs:
                   # github-token: ${{ secrets.GITHUB_TOKEN }}
                   issue-message: '<h3>Hey! thank you for opening an Issue 🎉.</h3>'
                   pr-message: '<h3>Hey! thank you for opening a Pull Request 🎉.</h3>'
-                  footer: 'Thankyou for contributing to DogDB, Happy, Open Source!</b>'
+                  footer: 'Thank you for contributing to DogDB, Happy, Open Source!</b>'
