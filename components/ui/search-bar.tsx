@@ -13,7 +13,7 @@ function SearchBar() {
                 variant='outline'
                 className='h-10 rounded-full bg-primary text-black'
             >
-                Search
+              Search
             </Button>
         </div>
     )
