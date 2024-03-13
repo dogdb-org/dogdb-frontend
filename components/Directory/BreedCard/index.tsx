@@ -8,15 +8,6 @@ interface BreedCardProps {
     breedShortDescription: string
 }
 
-const dummyProps: BreedCardProps = {
-    breedName: "Golden Retriever",
-    breedImages: [
-      { url: "https://example.com/image1.jpg", alt: "Golden Retriever puppy" },
-      { url: "https://example.com/image2.jpg", alt: "Golden Retriever playing fetch" },
-    ],
-    breedShortDescription: "Golden Retrievers are known for their friendly and intelligent nature. They are popular family dogs and are often used as service animals.",
-  };
-
 const BreedCard: React.FC<BreedCardProps> = ({
     breedName,
     breedImages,
