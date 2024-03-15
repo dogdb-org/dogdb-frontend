@@ -14,7 +14,7 @@ const BreedCard: React.FC<BreedCardProps> = ({
     breedShortDescription,
 }) => {
     return (
-        <div className='bg-orange-400 rounded-lg shadow-md p-4 mb-4'>
+        <div className='mb-4 rounded-lg bg-orange-400 p-4 shadow-md'>
             <Image
                 src={breedImages[0].url}
                 alt={breedImages[0].alt}
@@ -22,7 +22,7 @@ const BreedCard: React.FC<BreedCardProps> = ({
                 height={400}
                 layout='responsive'
             />
-            <h2 className='text-xl font-bold mb-2 mt-2'>{breedName}</h2>
+            <h2 className='mb-2 mt-2 text-xl font-bold'>{breedName}</h2>
             <p className='text-base'>{breedShortDescription}</p>
         </div>
     )

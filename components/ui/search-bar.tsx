@@ -3,7 +3,7 @@ import { Button } from '../ui/button'
 
 function SearchBar() {
     return (
-        <div className='rounded-input flex w-full items-center bg-input px-2 py-2'>
+        <div className='flex w-full items-center rounded-input bg-input px-2 py-2'>
             <IoSearchOutline className='mx-2 h-8 w-8 text-secondary-article' />
             <input
                 type='text'
