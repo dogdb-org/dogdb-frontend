@@ -1,4 +1,1 @@
-#!/usr/bin/env sh
-. "${0%/*}/h"
-
 npm run build && git add . && git commit --amend --no-edit
