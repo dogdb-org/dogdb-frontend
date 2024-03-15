@@ -15,7 +15,7 @@ function Hero() {
                 ></Image>
                 <CardContent className='lg:w-5/12 flex flex-col items-center px-8 py-4 md:items-start md:p-8'>
                     <h1 className='font-main text-3xl font-bold leading-10 md:text-5xl md:leading-tight'>
-                        Find your perfect dog breed.
+                        Find your perfect dog breedd.
                     </h1>
                     <p className='font-sans text-lg leading-8 md:leading-10'>
                         Discover the ideal companion for your lifestyle.
