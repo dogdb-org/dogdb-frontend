@@ -1,5 +1,9 @@
-function Page() {
-    return <div className=''>breeds Page</div>
+import BreedGrid from "@/components/Directory/BreedGrid"
+
+const page = () => {
+  return (
+    <BreedGrid/>
+  )
 }
 
-export default Page
+export default page
