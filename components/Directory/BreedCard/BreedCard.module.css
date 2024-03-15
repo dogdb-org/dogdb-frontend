@@ -4,12 +4,13 @@
     padding: 20px;
     margin-bottom: 20px;
     color: black;
-    background-color: #E5801A;
+    background-color: #FFAD08;
 }
 
 .breedCard h2 {
     font-size: 24px;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .breedCard p {

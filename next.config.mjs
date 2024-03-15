@@ -2,7 +2,13 @@
 const nextConfig = {
     // Image optimization configuration
     images: {
-      domains: ['example.com'], // Replace with your actual image domain(s)
+      remotePatterns: [
+        {
+          protocol: 'https', // Adjust if necessary for the protocol
+          hostname: 'via.placeholder.com',
+          pathname: '**', // Matches all paths under 'via.placeholder.com'
+        },
+      ],
     },
   };
   
