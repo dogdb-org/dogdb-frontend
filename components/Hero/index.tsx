@@ -6,7 +6,7 @@ import SearchBar from '../ui/search-bar'
 function Hero() {
     return (
         <section className='text-secondary-body'>
-            <div className='flex flex-col py-8 md:flex-row'>
+            <div className='flex flex-col pb-8 pt-[60px] md:flex-row'>
                 {/* Desktop Image */}
                 <div className='relative hidden min-h-[279px] w-full p-4 md:block md:h-auto md:w-full md:p-0'>
                     <Image
