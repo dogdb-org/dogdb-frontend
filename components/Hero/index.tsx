@@ -12,9 +12,9 @@ function Hero() {
                     <Image
                         src={HeroImg}
                         alt='an image of dog running with joy'
-                        layout='fill'
-                        objectFit='cover'
-                        className='rounded-btn shadow-lg'
+                        fill
+                        className='rounded-btn object-cover shadow-lg'
+                        sizes={'100%'}
                     />
                 </div>
 
@@ -23,9 +23,9 @@ function Hero() {
                     <Image
                         src={HeroImgMob}
                         alt='an image of dog running in a field with joy'
-                        layout='fill'
-                        objectFit='cover'
-                        className='w-screen rounded-btn shadow-lg'
+                        fill
+                        className='w-screen rounded-btn object-cover shadow-lg'
+                        sizes={'100%'}
                     />
                     <h2 className='tracking-regular font-regular absolute bottom-2 p-2 font-main text-4xl leading-none text-white shadow'>
                         Find your perfect <br /> dog breed
