@@ -1,28 +1,49 @@
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
-
 import Image from 'next/image'
-import HeroImg from '@/assets/image/hero.jpg'
+import HeroImg from '@/assets/image/hero/dog-running.png'
+import HeroImgMob from '@/assets/image/hero/dogfield-mobile.png'
 import SearchBar from '../ui/search-bar'
 
 function Hero() {
     return (
-        <section className='mx-auto my-8 w-9/12 text-black dark:text-white md:m-auto md:my-16'>
-            <Card className='mx-auto flex flex-col justify-around border-none shadow-none md:flex-row'>
-                <Image
-                    src={HeroImg}
-                    alt='an image of dog running with joy.'
-                    className='h-80 w-full rounded-img md:w-3/5'
-                ></Image>
-                <CardContent className='lg:w-5/12 flex flex-col items-center px-8 py-4 md:items-start md:p-8'>
-                    <h1 className='font-main text-3xl font-bold leading-10 md:text-5xl md:leading-tight'>
-                        Find your perfect dog breed.
-                    </h1>
-                    <p className='font-sans text-lg leading-8 md:leading-10'>
-                        Discover the ideal companion for your lifestyle.
+        <section className='text-secondary-body'>
+            <div className='flex flex-col py-8 md:flex-row'>
+                {/* Desktop Image */}
+                <div className='relative hidden min-h-[279px] w-full p-4 md:block md:h-auto md:w-full md:p-0'>
+                    <Image
+                        src={HeroImg}
+                        alt='an image of dog running with joy'
+                        layout='fill'
+                        objectFit='cover'
+                        className='rounded-btn shadow-lg'
+                    />
+                </div>
+
+                {/* Mobile Image */}
+                <div className='relative min-h-[279px] p-4 md:hidden md:h-auto md:w-full md:p-0'>
+                    <Image
+                        src={HeroImgMob}
+                        alt='an image of dog running in a field with joy'
+                        layout='fill'
+                        objectFit='cover'
+                        className='w-screen rounded-btn shadow-lg'
+                    />
+                    <h2 className='tracking-regular font-regular absolute bottom-2 p-2 font-main text-4xl leading-none text-white shadow'>
+                        Find your perfect dog breed
+                    </h2>
+                </div>
+
+                <div className='flex flex-col items-center justify-center md:items-start md:pl-6'>
+                    <h2 className='tracking-regular hidden font-main text-[40px] font-bold leading-none text-secondary-body md:block md:leading-tight'>
+                        Find your perfect dog breed
+                    </h2>
+                    <p className='font-regular px-10 py-6 text-center font-sans text-3xl leading-8 text-secondary-body md:px-0 md:py-0 md:text-left md:text-sm'>
+                        Discover the ideal companion for your lifestyle
                     </p>
-                    <SearchBar />
-                </CardContent>
-            </Card>
+                    <div className='w-full pt-4'>
+                        <SearchBar />
+                    </div>
+                </div>
+            </div>
         </section>
     )
 }
