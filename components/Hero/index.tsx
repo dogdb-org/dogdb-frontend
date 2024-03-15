@@ -28,7 +28,7 @@ function Hero() {
                         className='w-screen rounded-btn shadow-lg'
                     />
                     <h2 className='tracking-regular font-regular absolute bottom-2 p-2 font-main text-4xl leading-none text-white shadow'>
-                        Find your perfect dog breed
+                        Find your perfect <br /> dog breed
                     </h2>
                 </div>
 
