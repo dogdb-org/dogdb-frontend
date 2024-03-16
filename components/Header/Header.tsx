@@ -16,7 +16,7 @@ import { RxAvatar } from 'react-icons/rx'
 function Header() {
     const isLoggedIn = false
     return (
-        <header className='sticky inset-0 inset-y-0 right-0 w-full border-b bg-background px-4 py-3 text-secondary-body dark:text-white md:px-12'>
+        <header className='sticky inset-0 inset-y-0 right-0 z-10 w-full border-b bg-background px-4 py-3 text-secondary-body dark:text-white md:px-12'>
             <nav className='flex items-center justify-between'>
                 <Link href='/'>
                     <div className='flex items-center justify-between space-x-3'>
