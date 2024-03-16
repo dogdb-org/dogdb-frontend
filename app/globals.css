@@ -23,7 +23,7 @@
         --muted: 0 0% 96.1%;
         --muted-foreground: 0 0% 45.1%;
 
-        --accent: 0 0% 96.1%;
+        --accent: #ffad0a;
         --accent-foreground: 0 0% 9%;
 
         --destructive: 0 84.2% 60.2%;
@@ -53,13 +53,13 @@
         --primary-foreground: #f5edd9; /* Input backgrounds and non-clickable buttons */
 
         --secondary-body: #ffffff; /* Common body text and icon colours */
-        --secondary-article: #d3d3d3; /* Card text */
+        --secondary-article: #b5872e; /* Card text */
         --secondary-foreground: #ffffff;
 
         --muted: 0 0% 96.1%;
         --muted-foreground: 0 0% 45.1%;
 
-        --accent: #ffffff;
+        --accent: #ffad0a;
         --accent-foreground: #ffffff;
 
         --destructive: 0 84.2% 60.2%;
