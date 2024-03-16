@@ -1,11 +1,5 @@
 # Contributor Code of Conduct
 
-We as members, contributors, and leaders promise to make participation in our
-community a harassment-free experience for everyone, regardless of age, body
-size, visible or invisible disability, ethnicity, sex characteristics, gender
-identity and expression, level of experience, education, socio-economic status,
-nationality, personal appearance, race, religion, or sexual identity
-and orientation.
+As members, contributors, and Maintainers, we commit to ensuring that everyone in our community can participate without fear of harassment, regardless of age, physical appearance, disabilities, ethnicity, gender identity, experience level, education, socio-economic status, nationality, personal appearance, race, religion, or sexual orientation.We value collaboration, open communication, and accountability.
 
-We pledge to act and interact in ways that contribute to an open, welcoming,
-diverse, inclusive, and healthy community.
+We vow to engage with each other in manners that foster an atmosphere of openness, inclusivity, diversity, and health within our community.By upholding these standards, we create a supportive and productive environment for all members to thrive.
