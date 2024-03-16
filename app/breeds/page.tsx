@@ -1,9 +1,7 @@
-import BreedGrid from "@/components/Directory/BreedGrid"
+import BreedGrid from '@/components/Directory/BreedGrid'
 
 const page = () => {
-  return (
-    <BreedGrid/>
-  )
+    return <BreedGrid />
 }
 
 export default page

@@ -11,6 +11,7 @@ import { navLinks } from '@/lib/utils/constant'
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
 import { MenuIcon } from 'lucide-react'
 import { FaArrowRightLong } from 'react-icons/fa6'
+import { RxAvatar } from 'react-icons/rx'
 
 function Header() {
     const isLoggedIn = false
@@ -54,12 +55,7 @@ function Header() {
                                 </Avatar>
                             ) : (
                                 <Avatar>
-                                    <Image
-                                        className='h-10 w-10 rounded-full'
-                                        src={Account}
-                                        alt={'Account Avatar'}
-                                        priority
-                                    />
+                                    <RxAvatar className='text-[32px] text-secondary-body' />
                                 </Avatar>
                             )}
                         </div>

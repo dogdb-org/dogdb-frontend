@@ -1,8 +1,10 @@
+import Hero from '@/components/Hero'
 import HomePage from '@/components/Home'
 
 export default function Home() {
     return (
-        <main className='min-h-screen bg-background p-24'>
+        <main className='container min-h-screen bg-background'>
+            <Hero />
             <HomePage />
         </main>
     )

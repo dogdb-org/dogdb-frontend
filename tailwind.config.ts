@@ -11,15 +11,15 @@ const config = {
     prefix: '',
     theme: {
         screens: {
-            md: '800px',
+            md: '1000px',
             '2xl': '1400px',
         },
         container: {
             center: true,
-            padding: '2rem',
+            padding: '1rem',
             screens: {
-                md: '800px',
-                '2xl': '1400px',
+                sm: '600px',
+                md: '1000px',
             },
         },
         extend: {
@@ -48,6 +48,7 @@ const config = {
                 },
                 accent: {
                     DEFAULT: 'hsl(var(--accent))',
+                    hover: 'hsl(var(--accent))',
                     foreground: 'hsl(var(--accent-foreground))',
                 },
                 popover: {
@@ -64,6 +65,7 @@ const config = {
                 sm: 'calc(var(--radius) - 4px)',
                 img: 'var(--radius-image)',
                 btn: 'var(--radius-button)',
+                input: '32px',
             },
             keyframes: {
                 'accordion-down': {

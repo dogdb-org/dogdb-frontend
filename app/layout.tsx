@@ -52,7 +52,6 @@ export default function RootLayout({
                 >
                     <StoreProvider>
                         <Header />
-                        <Hero />
                         {children}
                     </StoreProvider>
                 </ThemeProvider>

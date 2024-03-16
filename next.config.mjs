@@ -2,15 +2,14 @@
 const nextConfig = {
     // Image optimization configuration
     images: {
-      remotePatterns: [
-        {
-          protocol: 'https', // Adjust if necessary for the protocol
-          hostname: 'via.placeholder.com',
-          pathname: '**', // Matches all paths under 'via.placeholder.com'
-        },
-      ],
+        remotePatterns: [
+            {
+                protocol: 'https', // Adjust if necessary for the protocol
+                hostname: 'via.placeholder.com',
+                pathname: '**', // Matches all paths under 'via.placeholder.com'
+            },
+        ],
     },
-  };
-  
-  export default nextConfig;
-  
+}
+
+export default nextConfig
