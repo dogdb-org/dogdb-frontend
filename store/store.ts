@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { counterSlice } from './testsSlice/testsSlice'
+import { breedsSlice } from './breedsSlice/breedsSlice'
 
 export const makeStore = () => {
     return configureStore({
         reducer: {
             tests: counterSlice.reducer,
+            breeds: breedsSlice.reducer,
         },
     })
 }
