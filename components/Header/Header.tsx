@@ -2,13 +2,13 @@
 
 import Image from 'next/image'
 import Logo from '@/assets/image/logo-light.svg'
-import Account from '@/assets/image/account.svg'
 import NavLink from './NavLinks'
 import Link from 'next/link'
 import { Button } from '../ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
 import { navLinks } from '@/lib/utils/constant'
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
+import { ModeToggle } from '../ui/modeToggle'
 import { MenuIcon } from 'lucide-react'
 import { FaArrowRightLong } from 'react-icons/fa6'
 import { RxAvatar } from 'react-icons/rx'
@@ -16,7 +16,7 @@ import { RxAvatar } from 'react-icons/rx'
 function Header() {
     const isLoggedIn = false
     return (
-        <header className='sticky inset-0 inset-y-0 right-0 w-full border-b bg-background px-4 py-3 text-secondary-body dark:text-white md:px-12'>
+        <header className='sticky inset-0 inset-y-0 right-0 z-10 w-full border-b bg-background px-4 py-3 text-secondary-body dark:text-white md:px-12'>
             <nav className='flex items-center justify-between'>
                 <Link href='/'>
                     <div className='flex items-center justify-between space-x-3'>
@@ -41,6 +41,10 @@ function Header() {
                                 </li>
                             ))}
                         </ul>
+                    </div>
+
+                    <div>
+                        <ModeToggle />
                     </div>
 
                     <div className='hidden cursor-pointer md:flex md:flex-row md:items-center md:gap-8'>
@@ -72,6 +76,9 @@ function Header() {
                             side='right'
                             className='text-black dark:text-white'
                         >
+                            <div>
+                                <ModeToggle />
+                            </div>
                             <div className='top-2'>
                                 <Avatar>
                                     <AvatarImage

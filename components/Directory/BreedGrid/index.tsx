@@ -1,17 +1,24 @@
+'use client'
+
 import BreedCard from '../BreedCard'
-import { dummyPropsArray } from './data'
+import useDogDirectory from '../../../hooks/useDogDirectory'
+import { nanoid } from '@reduxjs/toolkit'
 
 function BreedGrid() {
+    const { dogBreeds } = useDogDirectory()
     return (
-        <div className='flex max-w-full flex-wrap justify-center'>
-            {dummyPropsArray.map((props, index) => (
-                <div
-                    key={index}
-                    className='sm:w-1/2 lg:w-1/4 w-full p-4 md:w-1/3'
-                >
-                    <BreedCard {...props} />
-                </div>
-            ))}
+        <div className='grid w-full grid-cols-2 gap-4 md:grid-cols-4'>
+            {dogBreeds.map(
+                ({ breedName, breedImages, breedShortDescription }) => (
+                    <div key={nanoid()} className='w-full'>
+                        <BreedCard
+                            breedName={breedName}
+                            breedImages={breedImages}
+                            breedShortDescription={breedShortDescription}
+                        />
+                    </div>
+                )
+            )}
         </div>
     )
 }
