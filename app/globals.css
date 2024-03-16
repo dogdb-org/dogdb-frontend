@@ -10,8 +10,8 @@
         --card-background: #ffffff;
         --card-foreground: #ffffff;
 
-        --popover: #d3d3d3;
-        --popover-foreground: #ffffff;
+        --popover: #f5edd9;
+        --popover-foreground: #211708;
 
         --primary: #ffad0a; /* Buttons and focus points */
         --primary-foreground: #f5edd9; /* Input backgrounds and non-clickable buttons */
@@ -33,7 +33,7 @@
         --input: #f5edd9;
         --ring: 0 0% 3.9%;
 
-        --radius: 25px;
+        --radius: 15px;
         --radius-image: 12px; /* Border radius for images */
         --radius-button: 16px; /* Border radius for buttons */
     }

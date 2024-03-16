@@ -1,30 +1,31 @@
-import * as React from 'react'
+'use client'
+
 import Image from 'next/image'
-import styles from './BreedCard.module.css'
+import { FC } from 'react'
 
 interface BreedCardProps {
     breedName: string
-    breedImages: { url: string; alt: string }[]
+    breedImages: string[]
     breedShortDescription: string
 }
 
-const BreedCard: React.FC<BreedCardProps> = ({
+const BreedCard: FC<BreedCardProps> = ({
     breedName,
     breedImages,
     breedShortDescription,
 }) => {
     return (
-        <div className='mb-4 rounded-lg bg-orange-400 p-4 shadow-md'>
+        <article className='mb-4 rounded-lg text-secondary-body'>
             <Image
-                src={breedImages[0].url}
-                alt={breedImages[0].alt}
+                src={`/images/breeds/${breedImages[0]}.jpg`}
+                alt={breedName}
                 width={800}
                 height={400}
-                layout='responsive'
+                className='rounded-btn shadow'
             />
-            <h2 className='mb-2 mt-2 text-xl font-bold'>{breedName}</h2>
-            <p className='text-base'>{breedShortDescription}</p>
-        </div>
+            <h2 className='text-md mb-2 mt-2 font-semibold'>{breedName}</h2>
+            <p className='text-sm'>{breedShortDescription}</p>
+        </article>
     )
 }
 
