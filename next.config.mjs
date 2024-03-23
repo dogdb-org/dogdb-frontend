@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'export',
     // Image optimization configuration
     images: {
         remotePatterns: [
