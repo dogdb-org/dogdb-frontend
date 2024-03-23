@@ -15,6 +15,7 @@ function Hero() {
                         fill
                         className='rounded-btn object-cover shadow-lg'
                         sizes={'100%'}
+                        unoptimized={true}
                     />
                 </div>
 
@@ -26,6 +27,7 @@ function Hero() {
                         fill
                         className='w-screen rounded-btn object-cover shadow-lg'
                         sizes={'100%'}
+                        unoptimized={true}
                     />
                     <h2 className='tracking-regular font-regular absolute bottom-2 p-2 font-main text-4xl leading-none text-white shadow'>
                         Find your perfect <br /> dog breed

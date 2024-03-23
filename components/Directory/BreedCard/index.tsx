@@ -22,6 +22,7 @@ const BreedCard: FC<BreedCardProps> = ({
                 width={800}
                 height={400}
                 className='rounded-btn shadow'
+                unoptimized={true}
             />
             <h2 className='text-md mb-2 mt-2 font-semibold'>{breedName}</h2>
             <p className='text-sm'>{breedShortDescription}</p>
