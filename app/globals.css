@@ -5,7 +5,7 @@
 @layer base {
     :root {
         --background: #ffffff;
-        --foreground: #ffffff;
+        --foreground: #211708;
 
         --card-background: #ffffff;
         --card-foreground: #ffffff;
@@ -41,7 +41,7 @@
     .dark {
         /* To change when we figure out a dark mode design, temporary just to see transition */
         --background: #1a262f;
-        --foreground: #211708;
+        --foreground: #ffffff;
 
         --card-background: #111111;
         --card-foreground: #111111;
@@ -76,9 +76,6 @@
 }
 
 @layer base {
-    * {
-        @apply border-border;
-    }
     body {
         @apply bg-background text-foreground;
     }
