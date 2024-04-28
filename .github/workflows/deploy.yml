@@ -19,7 +19,7 @@ jobs:
         KEY: ${{ secrets.DOGDB_SSHKEY }}
       with:
         source: "."
-        target: "/dogdb"
+        target: "/home/elidakirigo/dogdb"
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
