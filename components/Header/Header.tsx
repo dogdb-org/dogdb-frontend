@@ -9,12 +9,35 @@ import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
 import { navLinks } from '@/lib/utils/constant'
 import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
 import { ModeToggle } from '../ui/modeToggle'
-import { MenuIcon } from 'lucide-react'
+import { MenuIcon, UserIcon } from 'lucide-react'
 import { FaArrowRightLong } from 'react-icons/fa6'
 import { RxAvatar } from 'react-icons/rx'
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from '../ui/dropdown-menu'
+import { useRouter } from 'next/navigation'
+import React from 'react'
 
 function Header() {
+    const [isCLient, setIsClient] = React.useState<boolean>(false)
+    const router = useRouter()
     const isLoggedIn = false
+
+    const handleProfileClick = () => {
+        router.replace('/account/profile')
+    }
+
+    React.useEffect(() => {
+        setIsClient(true)
+    }, [])
+
+    if (!isCLient) return null
+
     return (
         <header className='sticky inset-0 inset-y-0 right-0 z-10 w-full border-b bg-background px-4 py-3 text-secondary-body dark:text-white md:px-12'>
             <nav className='flex items-center justify-between'>
@@ -49,19 +72,34 @@ function Header() {
 
                     <div className='hidden cursor-pointer md:flex md:flex-row md:items-center md:gap-8'>
                         <div>
-                            {isLoggedIn ? (
-                                <Avatar>
-                                    <AvatarImage
-                                        className='h-10 w-10 rounded-full'
-                                        src='https://pbs.twimg.com/profile_images/1754602039311478784/EmA-O4v4_400x400.jpg'
-                                    />
-                                    <AvatarFallback>CN</AvatarFallback>
-                                </Avatar>
-                            ) : (
-                                <Avatar>
-                                    <RxAvatar className='text-[32px] text-secondary-body' />
-                                </Avatar>
-                            )}
+                            <DropdownMenu>
+                                <DropdownMenuTrigger>
+                                    <Button size='icon' variant='outline'>
+                                        <UserIcon className='h-6 w-6' />
+                                        <span className='sr-only'>
+                                            Open user menu
+                                        </span>
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent>
+                                    <DropdownMenuLabel>
+                                        Your profile
+                                    </DropdownMenuLabel>
+                                    <DropdownMenuSeparator />
+                                    <DropdownMenuItem
+                                        onClick={handleProfileClick}
+                                    >
+                                        Profile
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        Settings
+                                    </DropdownMenuItem>
+
+                                    <DropdownMenuItem className=' text-red-500'>
+                                        Logout
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
                     </div>
                 </div>
