@@ -12,13 +12,14 @@ jobs:
 
     - name: DogDB 
       uses: appleboy/scp-action@master
-      with:
+      env:
         HOST: ${{ secrets.DOGDB_HOST}}
         USERNAME: ${{ secrets.DOGDB_USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.DOGDB_SSHKEY }}
+      with:
         source: "."
-        target: "/home/elidakirigo/dogdb"
+        target: "~/home/elidakirigo/dogdb"
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
