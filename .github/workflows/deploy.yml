@@ -11,13 +11,12 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: DogDB 
-      uses: appleboy/ssh-action@0.1.4
-      env:
+      uses: appleboy/scp-action@master
+      with:
         HOST: ${{ secrets.DOGDB_HOST}}
         USERNAME: ${{ secrets.DOGDB_USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.DOGDB_SSHKEY }}
-      with:
         source: "."
         target: "/home/elidakirigo/dogdb"
 
