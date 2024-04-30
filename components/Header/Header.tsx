@@ -24,19 +24,12 @@ import { useRouter } from 'next/navigation'
 import React from 'react'
 
 function Header() {
-    const [isCLient, setIsClient] = React.useState<boolean>(false)
     const router = useRouter()
     const isLoggedIn = false
 
     const handleProfileClick = () => {
         router.replace('/account/profile')
     }
-
-    React.useEffect(() => {
-        setIsClient(true)
-    }, [])
-
-    if (!isCLient) return null
 
     return (
         <header className='sticky inset-0 inset-y-0 right-0 z-10 w-full border-b bg-background px-4 py-3 text-secondary-body dark:text-white md:px-12'>
@@ -73,7 +66,7 @@ function Header() {
                     <div className='hidden cursor-pointer md:flex md:flex-row md:items-center md:gap-8'>
                         <div>
                             <DropdownMenu>
-                                <DropdownMenuTrigger>
+                                <DropdownMenuTrigger asChild>
                                     <Button size='icon' variant='outline'>
                                         <UserIcon className='h-6 w-6' />
                                         <span className='sr-only'>

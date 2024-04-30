@@ -1,7 +1,7 @@
 'use client'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import React from 'react'
+import React, { useState } from 'react'
 import UseProfile from '@/assets/image/user-profile.png'
 import { Button } from '@/components/ui/button'
 import {
@@ -25,21 +25,23 @@ import { PasswordResetSchema } from '@/lib/utils/schema'
 import { toast } from '@/components/ui/use-toast'
 import { Input } from '@/components/ui/input'
 import { CameraIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 type UserDataType = {
+    fullName: string
     userName: string
     email: string
 }
 
 function page() {
-    const [isEditing, setIsEditing] = React.useState<boolean>(false)
-    const [isEditingUsername, setIsEditingUsername] =
-        React.useState<boolean>(false)
-    const [isEditingUserEmail, setIsEditingUserEmail] =
-        React.useState<boolean>(false)
-    const [isClient, setIsClient] = React.useState<boolean>(false)
+    const [isEditing, setIsEditing] = useState<boolean>(false)
+    const [isEditingUsername, setIsEditingUsername] = useState<boolean>(false)
+    const [isEditingFullname, setIsEditingaFullname] = useState<boolean>(false)
+    const [isEditingUserEmail, setIsEditingUserEmail] = useState<boolean>(false)
+    const router = useRouter()
 
-    const [userData, setUserData] = React.useState<UserDataType>({
+    const [userData, setUserData] = useState<UserDataType>({
+        fullName: 'Leonardo DiCaprio',
         userName: '@leonardodiCaprio',
         email: 'leonardodiCaprio@gmail.com',
     })
@@ -53,17 +55,13 @@ function page() {
         },
     })
 
-    const handleUserNameChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    const handleUserDataChange = (
+        evt: React.ChangeEvent<HTMLInputElement>,
+        field: keyof UserDataType
+    ) => {
         setUserData((prev) => ({
             ...prev,
-            userName: evt.target.value,
-        }))
-    }
-
-    const handleEmailChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-        setUserData((prev) => ({
-            ...prev,
-            email: evt.target.value,
+            [field]: evt.target.value,
         }))
     }
 
@@ -74,12 +72,6 @@ function page() {
             description: 'Password reset successfully',
         })
     }
-
-    React.useEffect(() => {
-        setIsClient(true)
-    }, [])
-
-    if (!isClient) return null
 
     return (
         <main className='mx-8 my-8 md:mx-40 md:my-12'>
@@ -93,14 +85,16 @@ function page() {
                             />
                             <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
-                        <Button
-                            className='absolute bottom-0 right-0 -translate-x-1/2 translate-y-1/2 rounded-full border-2 border-white bg-white p-1 transition-colors dark:border-gray-950'
-                            size='icon'
-                            variant='outline'
-                        >
-                            <CameraIcon className='h-4 w-4 text-gray-500 dark:text-gray-400' />
-                            <span className='sr-only'>Upload Avatar</span>
-                        </Button>
+                        {isEditing ? (
+                            <Button
+                                className='absolute bottom-0 right-0 -translate-x-1/2 translate-y-1/2 rounded-full border-2 border-white bg-white p-1 transition-colors dark:border-gray-950'
+                                size='icon'
+                                variant='outline'
+                            >
+                                <CameraIcon className='h-4 w-4 text-gray-500 dark:text-gray-400' />
+                                <span className='sr-only'>Upload Avatar</span>
+                            </Button>
+                        ) : null}
                     </div>
                     <div>
                         <h1 className=' text-2xl font-bold md:text-3xl'>
@@ -125,13 +119,43 @@ function page() {
                 <h1 className=' text-3xl font-semibold'>Account</h1>
                 <div className=' flex items-center justify-between'>
                     <div className=' h-12'>
+                        <h4 className=' font-semibold'>Full Name</h4>
+                        {isEditingFullname ? (
+                            <Input
+                                className=' mt-2'
+                                type='text'
+                                value={userData.fullName}
+                                onChange={(evt) =>
+                                    handleUserDataChange(evt, 'fullName')
+                                }
+                            />
+                        ) : (
+                            <p className=' text-sm'>{userData.fullName}</p>
+                        )}
+                    </div>
+                    <Button
+                        className=' w-[85px]'
+                        disabled={!isEditing}
+                        onClick={() =>
+                            setIsEditingaFullname(!isEditingFullname)
+                        }
+                        variant='outline'
+                    >
+                        {isEditingFullname ? 'Save' : 'Change'}
+                    </Button>
+                </div>
+
+                <div className=' flex items-center justify-between'>
+                    <div className=' h-12'>
                         <h4 className=' font-semibold'>Username</h4>
                         {isEditingUsername ? (
                             <Input
                                 className=' mt-2'
                                 type='text'
                                 value={userData.userName}
-                                onChange={handleUserNameChange}
+                                onChange={(evt) =>
+                                    handleUserDataChange(evt, 'userName')
+                                }
                             />
                         ) : (
                             <p className=' text-sm'>{userData.userName}</p>
@@ -155,7 +179,9 @@ function page() {
                                 className='mt-2'
                                 type='text'
                                 value={userData.email}
-                                onChange={handleEmailChange}
+                                onChange={(evt) =>
+                                    handleUserDataChange(evt, 'email')
+                                }
                             />
                         ) : (
                             <p className=' text-sm'>{userData.email}</p>
@@ -180,11 +206,11 @@ function page() {
                     </div>
 
                     <Dialog>
-                        <DialogTrigger>
+                        <DialogTrigger asChild>
                             <Button
-                                className=' w-[85px]'
                                 disabled={!isEditing}
                                 variant='outline'
+                                className='w-[85px]'
                             >
                                 Reset
                             </Button>
@@ -261,7 +287,11 @@ function page() {
             </div>
 
             <div className=' mx-auto mt-8 flex items-center justify-center'>
-                <Button className=' hover:text-red-400' variant='outline'>
+                <Button
+                    onClick={() => router.replace('/account')}
+                    className=' hover:text-red-400'
+                    variant='outline'
+                >
                     Log out
                 </Button>
             </div>
