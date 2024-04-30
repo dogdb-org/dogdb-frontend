@@ -11,7 +11,6 @@ import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
 import { ModeToggle } from '../ui/modeToggle'
 import { MenuIcon, UserIcon } from 'lucide-react'
 import { FaArrowRightLong } from 'react-icons/fa6'
-import { RxAvatar } from 'react-icons/rx'
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -20,16 +19,10 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from '../ui/dropdown-menu'
-import { useRouter } from 'next/navigation'
 import React from 'react'
 
 function Header() {
-    const router = useRouter()
     const isLoggedIn = false
-
-    const handleProfileClick = () => {
-        router.replace('/account/profile')
-    }
 
     return (
         <header className='sticky inset-0 inset-y-0 right-0 z-10 w-full border-b bg-background px-4 py-3 text-secondary-body dark:text-white md:px-12'>
@@ -79,10 +72,10 @@ function Header() {
                                         Your profile
                                     </DropdownMenuLabel>
                                     <DropdownMenuSeparator />
-                                    <DropdownMenuItem
-                                        onClick={handleProfileClick}
-                                    >
-                                        Profile
+                                    <DropdownMenuItem>
+                                        <Link href='/account/profile'>
+                                            Profile
+                                        </Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem>
                                         Settings
