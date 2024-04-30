@@ -38,7 +38,6 @@ function page() {
     const [isEditingUsername, setIsEditingUsername] = useState<boolean>(false)
     const [isEditingFullname, setIsEditingaFullname] = useState<boolean>(false)
     const [isEditingUserEmail, setIsEditingUserEmail] = useState<boolean>(false)
-    const router = useRouter()
 
     const [userData, setUserData] = useState<UserDataType>({
         fullName: 'Leonardo DiCaprio',
@@ -287,11 +286,7 @@ function page() {
             </div>
 
             <div className=' mx-auto mt-8 flex items-center justify-center'>
-                <Button
-                    onClick={() => router.replace('/account')}
-                    className=' hover:text-red-400'
-                    variant='outline'
-                >
+                <Button className=' hover:text-red-400' variant='outline'>
                     Log out
                 </Button>
             </div>
