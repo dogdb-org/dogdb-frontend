@@ -19,8 +19,8 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'npm'
             - run: npm ci
-            - run: npm run build --if-present
             - run: npm test
+            - run: npm run build --if-present
 
             - name: connecting to Server
               uses: appleboy/ssh-action@master
@@ -29,8 +29,9 @@ jobs:
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  source: '.,!node_modules'
-                  target: '/var/www/preview_dogdb_frontend'
+                  source: '.'
+                #   source: '.,!node_modules'
+                  target: '~/www/preview_dogdb_frontend'
             - name: Executing remote command
               uses: appleboy/ssh-action@master
               with:
