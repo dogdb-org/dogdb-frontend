@@ -13,7 +13,7 @@ jobs:
 
         steps:
             - uses: actions/checkout@v4
-            - name: build nextjs app
+            - name: npm run , test and build next app
               uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node-version }}
@@ -33,22 +33,11 @@ jobs:
                   #   source: '.,!node_modules'
                   target: '/var'
 
-            - name: Executing remote command for the first time
-              if: 'preview_frontend'
+            - name: Executing remote command
               uses: appleboy/ssh-action@master
               with:
                   host: ${{ secrets.DOGDB_HOST}}
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
-
-            - name: Executing remote command for not the first time
-              if: ! 'preview_frontend'
-              uses: appleboy/ssh-action@master
-              with:
-                  host: ${{ secrets.DOGDB_HOST}}
-                  username: ${{ secrets.DOGDB_USERNAME }}
-                  port: ${{ secrets.DOGDB_PORT }}
-                  key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: rm -r ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} && git clone https://github.com/dogdb-org/dogdb-frontend.git preview_frontend
+                  script: rm -r ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} && git clone -b ${{ github.ref_name }} https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}-${{ github.ref_name }}
