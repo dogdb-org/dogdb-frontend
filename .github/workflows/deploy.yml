@@ -34,7 +34,7 @@ jobs:
                   target: '/var'
 
             - name: Executing remote command for the first time
-              if: ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
+              if: 'preview_frontend'
               uses: appleboy/ssh-action@master
               with:
                   host: ${{ secrets.DOGDB_HOST}}
@@ -44,7 +44,7 @@ jobs:
                   script: git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
 
             - name: Executing remote command for not the first time
-              if: ${{ ! secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
+              if: ! 'preview_frontend'
               uses: appleboy/ssh-action@master
               with:
                   host: ${{ secrets.DOGDB_HOST}}
