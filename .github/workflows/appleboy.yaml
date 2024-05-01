@@ -5,11 +5,13 @@ jobs:
         name: Build
         runs-on: ubuntu-latest
         steps:
+            - name: Checking and editing ssh permissions
+              run: mkdir ~/.ssh && chmod 700 ~/.ssh
             - name: executing remote ssh commands using ssh key
               uses: appleboy/ssh-action@v1.0.3
               with:
                   host: ${{ secrets.HOST }}
                   username: ${{ secrets.USERNAME }}
-                  key: ${{ secrets.SSHKEY }}
+                  key: ${{ secrets.OPEN_SSHKEY }}
                   port: ${{ secrets.PORT }}
                   script: whoami
