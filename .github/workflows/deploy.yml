@@ -40,4 +40,4 @@ jobs:
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: cd dogdb-frontend && git fetch && git pull
+                  script: ls -la
