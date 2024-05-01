@@ -19,7 +19,7 @@ jobs:
                   PORT: ${{ secrets.PORT }}
                   KEY: ${{ secrets.SSHKEY }}
                   source: '.,!node_modules'
-                  target: '~/home/elidakirigo/dogdb'
+                  target: '~/home/elidakirigo/test_dogdb'
 
             - name: Executing remote command
               uses: appleboy/ssh-action@v0.1.10
