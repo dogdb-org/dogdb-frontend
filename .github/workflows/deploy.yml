@@ -31,7 +31,7 @@ jobs:
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   source: '.'
                   #   source: '.,!node_modules'
-                  target: '/var'
+                  target: '/var/'
 
             - name: Executing remote command
               uses: appleboy/ssh-action@master
@@ -40,4 +40,4 @@ jobs:
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
+                  script: rm -r ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} && git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
