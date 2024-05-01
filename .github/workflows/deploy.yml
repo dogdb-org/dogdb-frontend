@@ -30,7 +30,7 @@ jobs:
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   source: '.,!node_modules'
-                  target: '~/home/elidakirigo/test'
+                  target: '/var/www/preview_dogdb_frontend'
             - name: Executing remote command
               uses: appleboy/ssh-action@master
               with:
