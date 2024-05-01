@@ -20,3 +20,5 @@ cat .ssh/id_ed25519.pub | ssh elidakirigo@198.244.232.203 'cat >> .ssh/authorize
 
 sudo apt update
 sudo apt install git
+
+ssh -i ~/.ssh/id_ed25519 elidakirigo@198.244.232.203
