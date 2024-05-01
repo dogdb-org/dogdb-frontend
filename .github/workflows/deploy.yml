@@ -9,10 +9,12 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v3
+            - uses: actions/checkout@v4
+              with:
+                  node-version: 20
 
             - name: connecting to Server
-              uses: appleboy/ssh-action@v0.1.10
+              uses: appleboy/ssh-action@master
               with:
                   HOST: ${{ secrets.HOST}}
                   USERNAME: ${{ secrets.USERNAME }}
@@ -22,7 +24,7 @@ jobs:
                   target: '~/home/elidakirigo/test_dogdb'
 
             - name: Executing remote command
-              uses: appleboy/ssh-action@v0.1.10
+              uses: appleboy/ssh-action@master
               with:
                   HOST: ${{ secrets.DOGDB_HOST}}
                   USERNAME: ${{ secrets.DOGDB_USERNAME }}
