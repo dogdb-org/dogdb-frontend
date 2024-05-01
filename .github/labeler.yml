@@ -1,12 +1,14 @@
-name: 'Pull Request Labeler'
-on:
-    - pull_request_target
+test-implementation:
+    - cypress/**
+    - __test__/**
 
-jobs:
-    triage:
-        permissions:
-            contents: read
-            pull-requests: write
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/labeler@v4
+features_update:
+    - app/**
+    - components/**
+
+workflow-update/CI&CD_development:
+    - .github/**/*
+
+core_update/Build_update:
+    - public/**
+    - .**
