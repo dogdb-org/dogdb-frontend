@@ -40,4 +40,4 @@ jobs:
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: git clone -b ${{ github.ref_name }} https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} ${{ github.ref_name }}
+                  script: git clone -b ${{ github.ref_name }} https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}-${{ github.ref_name }}
