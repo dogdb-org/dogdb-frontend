@@ -7,11 +7,20 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [14.x, 16.x, 18.x, 20.x, 21.x]
 
         steps:
             - uses: actions/checkout@v4
+            - name: build nextjs app
+              uses: actions/setup-node@v3
               with:
-                  node-version: 18.x, 20.x, 21.x
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'npm'
+            - run: npm ci
+            - run: npm run build --if-present
+            - run: npm test
 
             - name: connecting to Server
               uses: appleboy/ssh-action@master
@@ -22,7 +31,6 @@ jobs:
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   source: '.,!node_modules'
                   target: '~/home/elidakirigo/test_dogdb'
-
             - name: Executing remote command
               uses: appleboy/ssh-action@master
               with:
