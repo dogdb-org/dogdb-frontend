@@ -1,3 +1,17 @@
+<!-- [@/assets/image/logo-light.svg](@/assets/image/logo-light.svg)
+
+[![Build Status][build-badge]][build]
+
+[![Code Coverage][coverage-badge]][coverage]
+[![version][version-badge]][package]
+[![downloads][downloads-badge]][npmtrends]
+[![MIT License][license-badge]][license]
+[![All Contributors][all-contributors-badge]](#contributors-)
+[![PRs Welcome][prs-badge]][prs]
+[![Code of Conduct][coc-badge]][coc] -->
+
+<!-- check - https://github.com/kentcdodds/cross-env/blob/master/README.md -->
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

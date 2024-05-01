@@ -1,32 +1,31 @@
 name: Deploy
 
-on: 
-  push:
-    branches: [ main, CD-deployment ]
+on:
+    push:
+        branches: [main, CD-deployment]
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
 
-    steps:
-    - uses: actions/checkout@v1
+            - name: connecting to Server
+              uses: appleboy/ssh-action@v0.1.10
+            #   with:
+            #       HOST: ${{ secrets.HOST}}
+            #       USERNAME: ${{ secrets.USERNAME }}
+            #       PORT: ${{ secrets.PORT }}
+            #       KEY: ${{ secrets.SSHKEY }}
+            #       source: '.,!node_modules'
+            #       target: '~/home/elidakirigo/dogdb'
 
-    - name: DogDB 
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        HOST: ${{ secrets.HOST}}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
-        source: ".,!node_modules"
-        target: "~/home/elidakirigo/dogdb"
-
-    - name: Executing remote command
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        HOST: ${{ secrets.HOST}}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
-        script: ls
+            # - name: Executing remote command
+            #   uses: appleboy/ssh-action@v0.1.10
+            #   with:
+            #       HOST: ${{ secrets.HOST}}
+            #       USERNAME: ${{ secrets.USERNAME }}
+            #       PORT: ${{ secrets.PORT }}
+            #       KEY: ${{ secrets.SSHKEY }}
+            #       script: ls

@@ -2,7 +2,7 @@ name: Greet Contributors
 on:
     fork:
     push:
-        branches: [main, CI/CD-workflow-intergration]
+        branches: [main]
     issues:
         types: [opened]
     issue_comment:

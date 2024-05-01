@@ -1,0 +1,17 @@
+name: Build and Deploy 
+
+on:
+    push:
+        branches: [main, CD-deployment]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Building and deploying
+              run:  mkdir ~/.ssh && chmod 700 ~/.ssh 
+            - name: Install the deploy key
+              run:  echo ${{ secrets.SSHKEY }} > ~/.ssh/deploy
