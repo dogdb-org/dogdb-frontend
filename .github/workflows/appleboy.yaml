@@ -7,6 +7,8 @@ jobs:
         steps:
             - name: Checking and editing ssh permissions
               run: mkdir ~/.ssh && chmod 700 ~/.ssh
+            - name: host check
+              run: echo "${{secrets.HOST}}"
             - name: executing remote ssh commands using ssh key
               uses: appleboy/ssh-action@v1.0.3
               with:
