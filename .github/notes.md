@@ -1,6 +1,6 @@
 ssh -i ~/.ssh/rd_rsa
 
-TEST="HELLO WORLD" 
+TEST="HELLO WORLD"
 echo $TEST
 
 $TEST > [file name]

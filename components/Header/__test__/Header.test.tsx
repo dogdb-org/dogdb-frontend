@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import Header from '../Header'
+import { useRouter } from 'next/navigation'
 
 const { expect, describe, it } = require('@jest/globals')
 
