@@ -42,4 +42,4 @@ jobs:
                   #   if: ${{ !secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
                   #   script: git pull
                   #   if: ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
-                  script: rm -d ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} && git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
+                  script: rm -r ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} && git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
