@@ -1,4 +1,4 @@
-name: Deploy
+name: Build NextApp and Deploy
 
 on:
     push:
@@ -24,8 +24,8 @@ jobs:
             - name: Executing remote command
               uses: appleboy/ssh-action@v0.1.10
               with:
-                  HOST: ${{ secrets.HOST}}
-                  USERNAME: ${{ secrets.USERNAME }}
-                  PORT: ${{ secrets.PORT }}
-                  KEY: ${{ secrets.SSHKEY }}
+                  HOST: ${{ secrets.DOGDB_HOST}}
+                  USERNAME: ${{ secrets.DOGDB_USERNAME }}
+                  PORT: ${{ secrets.DOGDB_PORT }}
+                  KEY: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   script: ls
