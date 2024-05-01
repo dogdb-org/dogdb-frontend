@@ -11,23 +11,23 @@ jobs:
         steps:
             - uses: actions/checkout@v4
               with:
-                  node-version: 20
+                  node-version: [18.x, 20.x, 21.x]
 
             - name: connecting to Server
               uses: appleboy/ssh-action@master
               with:
-                  HOST: ${{ secrets.HOST}}
-                  USERNAME: ${{ secrets.USERNAME }}
-                  PORT: ${{ secrets.PORT }}
-                  KEY: ${{ secrets.SSHKEY }}
+                  host: ${{ secrets.DOGDB_HOST}}
+                  username: ${{ secrets.DOGDB_USERNAME }}
+                  port: ${{ secrets.DOGDB_PORT }}
+                  key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   source: '.,!node_modules'
                   target: '~/home/elidakirigo/test_dogdb'
 
             - name: Executing remote command
               uses: appleboy/ssh-action@master
               with:
-                  HOST: ${{ secrets.DOGDB_HOST}}
-                  USERNAME: ${{ secrets.DOGDB_USERNAME }}
-                  PORT: ${{ secrets.DOGDB_PORT }}
-                  KEY: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
+                  host: ${{ secrets.DOGDB_HOST}}
+                  username: ${{ secrets.DOGDB_USERNAME }}
+                  port: ${{ secrets.DOGDB_PORT }}
+                  key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   script: ls
