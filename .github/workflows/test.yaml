@@ -14,4 +14,4 @@ jobs:
             - name: Building and deploying
               run: mkdir ~/.ssh && chmod 700 ~/.ssh
             - name: Install the deploy key
-              run: echo ${{ secrets.SSHKEY }} > ~/.ssh/deploy
+              run: echo "${{ secrets.SSHKEY }}" > ~/.ssh/deploy
