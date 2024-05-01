@@ -31,15 +31,24 @@ jobs:
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   source: '.'
                   #   source: '.,!node_modules'
-                  target: ${{secrets.DOGDB_PREVIEW_FRONTEND_URL}}
-            - name: Executing remote command
+                  target: '/var'
+
+            - name: Executing remote command for the first time
+              if: ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
               uses: appleboy/ssh-action@master
               with:
                   host: ${{ secrets.DOGDB_HOST}}
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  #   if: ${{ !secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
-                  #   script: git pull
-                  #   if: ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
-                  script: rm -r ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} && git clone https://github.com/dogdb-org/dogdb-frontend.git test
+                  script: git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
+
+            - name: Executing remote command for not the first time
+              if: ${{ ! secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.DOGDB_HOST}}
+                  username: ${{ secrets.DOGDB_USERNAME }}
+                  port: ${{ secrets.DOGDB_PORT }}
+                  key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
+                  script: rm -r ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} && git clone https://github.com/dogdb-org/dogdb-frontend.git preview_frontend
