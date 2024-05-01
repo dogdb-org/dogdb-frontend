@@ -39,4 +39,7 @@ jobs:
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: git clone https://github.com/dogdb-org/dogdb-frontend.git
+                  #   if: ${{ !secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
+                  #   script: git pull
+                  #   if: ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
+                  script: rm -d ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} && git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}
