@@ -2,7 +2,7 @@ name: Build NextApp and Deploy
 
 on:
     push:
-        branches: [main, CD-deployment]
+        branches: [main, CD-deployment-adam]
 
 jobs:
     deploy:
@@ -14,7 +14,7 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: '20.x' # Choose a specific version or use a matrix if needed
+                  node-version: '18.19.0' # Choose a specific version or use a matrix if needed
 
             - name: Executing remote deployment
               uses: appleboy/ssh-action@master
