@@ -2,7 +2,7 @@ name: Build NextApp and Deploy
 
 on:
     push:
-        branches: [main, CD-deployment-adam]
+        branches: [main, CD-deployment]
 
 jobs:
     deploy:
@@ -24,9 +24,26 @@ jobs:
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   script: |
-                      # Commands to clone and build the project on the server
-                      git clone https://github.com/dogdb-org/dogdb-frontend.git /var/www/dogdb-frontend || (cd /var/www/dogdb-frontend && git pull)
-                      cd /var/www/dogdb-frontend
+                      # Ensure the directory exists and is a git repository
+                      if [ -d "/var/www/dogdb-frontend/.git" ]; then
+                        # Directory exists and is a git repo, pull the latest from main
+                        echo "Repository exists. Pulling latest from main branch..."
+                        cd /var/www/dogdb-frontend
+                        git checkout main
+                        git pull origin main
+                      else
+                        # Directory does not exist as a git repo, clone it
+                        echo "Cloning the repository..."
+                        git clone -b main https://github.com/dogdb-org/dogdb-frontend.git /var/www/dogdb-frontend
+                        cd /var/www/dogdb-frontend
+                      fi
+
+                      # Install dependencies and build the project
+                      echo "Installing dependencies..."
                       npm install
+                      echo "Building the application..."
                       npm run build
-                      # Any other deployment scripts or server restart commands
+
+                      # Additional deployment scripts or server restart commands
+                      echo "Restarting server..."
+                      sudo systemctl reload nginx
