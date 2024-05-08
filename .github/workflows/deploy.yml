@@ -5,39 +5,28 @@ on:
         branches: [main, CD-deployment]
 
 jobs:
-    build:
+    deploy:
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version: [20.x, 21.x]
 
         steps:
             - uses: actions/checkout@v4
-            - name: npm run , test and build next app
+
+            - name: Setup Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: ${{ matrix.node-version }}
-                  cache: 'npm'
-            - run: npm ci
-            - run: npm test
-            - run: npm run build --if-present
+                  node-version: '20.x' # Choose a specific version or use a matrix if needed
 
-            - name: connecting to Server
+            - name: Executing remote deployment
               uses: appleboy/ssh-action@master
               with:
-                  host: ${{ secrets.DOGDB_HOST}}
+                  host: ${{ secrets.DOGDB_HOST }}
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  source: '.'
-                  #   source: '.,!node_modules'
-                  target: '/var/www/dogdb-frontend'
-
-            - name: Executing remote command
-              uses: appleboy/ssh-action@master
-              with:
-                  host: ${{ secrets.DOGDB_HOST}}
-                  username: ${{ secrets.DOGDB_USERNAME }}
-                  port: ${{ secrets.DOGDB_PORT }}
-                  key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: git clone https://github.com/dogdb-org/dogdb-frontend.git temps && mv temps/.git ${{secrets.DOGDB_FRONTEND_FOLDER_NAME}}/.git && rm -rf temps && git pull
+                  script: |
+                      # Commands to clone and build the project on the server
+                      git clone https://github.com/dogdb-org/dogdb-frontend.git /var/www/dogdb-frontend || (cd /var/www/dogdb-frontend && git pull)
+                      cd /var/www/dogdb-frontend
+                      npm install
+                      npm run build
+                      # Any other deployment scripts or server restart commands
