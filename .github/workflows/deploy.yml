@@ -14,7 +14,7 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: '18.19.0' # Choose a specific version or use a matrix if needed
+                  node-version: '18.19.0' # Choose a specific version
 
             - name: Executing remote deployment
               uses: appleboy/ssh-action@master
@@ -24,18 +24,16 @@ jobs:
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   script: |
-                      # Ensure the directory exists and is a git repository
+                      # Check if the directory exists and is a git repository
                       if [ -d "/var/www/dogdb-frontend/.git" ]; then
-                        # Directory exists and is a git repo, pull the latest from main
-                        echo "Repository exists. Pulling latest from main branch..."
-                        cd /var/www/dogdb-frontend
-                        git checkout main
-                        git pull origin main
+                          echo "Repository exists. Pulling the latest from main branch..."
+                          cd /var/www/dogdb-frontend
+                          git checkout main
+                          git pull origin main
                       else
-                        # Directory does not exist as a git repo, clone it
-                        echo "Cloning the repository..."
-                        git clone -b main https://github.com/dogdb-org/dogdb-frontend.git /var/www/dogdb-frontend
-                        cd /var/www/dogdb-frontend
+                          echo "Directory does not exist as a git repo, cloning..."
+                          git clone -b main https://github.com/dogdb-org/dogdb-frontend.git /var/www/dogdb-frontend
+                          cd /var/www/dogdb-frontend
                       fi
 
                       # Install dependencies and build the project
