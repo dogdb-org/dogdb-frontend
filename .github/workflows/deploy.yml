@@ -2,7 +2,7 @@ name: Build NextApp and Deploy
 
 on:
     push:
-        branches: [main, CD-deployment]
+        branches: [main, CD-deployment-adam]
 
 jobs:
     deploy:
