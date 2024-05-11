@@ -33,4 +33,8 @@ jobs:
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  run: ls
+                  script: |
+                     if [ ${{ secrets.DOGDB_PORT}} == 22]; then
+                       echo ${{secrets.DOGDB_PORT}} 
+                    else 
+                      echo not 22
