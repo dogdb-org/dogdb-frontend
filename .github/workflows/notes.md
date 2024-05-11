@@ -15,3 +15,4 @@ pm2 - https://pm2.io/
 sudo ./svc.sh install
 sudo ./svc.sh status
 sudo ./svc.sh start
+chown -R www-data:www-data myFolder
