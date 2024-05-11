@@ -9,7 +9,8 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                node-version: [20.x, 21.x]
+                node-version: [18.19.0]
+                # node-version: [20.x, 21.x]
 
         steps:
             - uses: actions/checkout@v4
@@ -40,4 +41,4 @@ jobs:
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: ls
+                  script: mkdir success
