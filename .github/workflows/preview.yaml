@@ -17,6 +17,10 @@ jobs:
 
             - name: connecting to Server
               uses: appleboy/ssh-action@master
+              env:
+                  FOO: 'BAR'
+                  BAR: 'FOO'
+                  SHA: ${{ github.sha }}
               with:
                   host: ${{ secrets.DOGDB_HOST}}
                   username: ${{ secrets.DOGDB_USERNAME }}
@@ -34,7 +38,7 @@ jobs:
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   script: |
-                     if [ ${{ secrets.DOGDB_PORT}} == 22]; then
-                       echo ${{secrets.DOGDB_PORT}} 
-                     else 
-                      echo not 22
+                      if [ ${{ secrets.DOGDB_PORT}} == 22]; then
+                        echo ${{secrets.DOGDB_PORT}} 
+                      else 
+                       echo not 22
