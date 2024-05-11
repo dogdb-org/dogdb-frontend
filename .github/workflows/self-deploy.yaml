@@ -31,7 +31,7 @@ jobs:
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   source: '.'
                   #   source: '.,!node_modules'
-                  target: '/var/www/dogdb-frontend'
+                  target: '~/var/www/'
 
             - name: Executing remote command
               uses: appleboy/ssh-action@master
