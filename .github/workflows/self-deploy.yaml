@@ -1,4 +1,4 @@
-name: Build NextApp and Deploy
+name: Self hosted Runner
 
 on:
     push:
