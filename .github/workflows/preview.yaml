@@ -35,4 +35,4 @@ jobs:
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
 
             - name: Install dependencies
-              run: npm install
+              run: ls
