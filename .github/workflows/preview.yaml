@@ -36,5 +36,5 @@ jobs:
                   script: |
                      if [ ${{ secrets.DOGDB_PORT}} == 22]; then
                        echo ${{secrets.DOGDB_PORT}} 
-                    else 
+                     else 
                       echo not 22
