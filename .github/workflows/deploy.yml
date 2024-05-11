@@ -32,7 +32,7 @@ jobs:
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   source: '.'
                   #   source: '.,!node_modules'
-                  target: '~/home/elidakirigo'
+                  target: '~/var/www/'
 
             - name: Executing remote command
               uses: appleboy/ssh-action@master
@@ -41,4 +41,4 @@ jobs:
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: mkdir success
+                  script: ls -la
