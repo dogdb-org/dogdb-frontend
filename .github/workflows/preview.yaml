@@ -14,14 +14,6 @@ jobs:
 
         steps:
             - uses: actions/checkout@v4
-            - name: npm run , test and build next app
-              uses: actions/setup-node@v3
-              with:
-                  node-version: ${{ matrix.node-version }}
-                  cache: 'npm'
-            - run: npm ci
-            - run: npm test
-            - run: npm run build --if-present
 
             - name: connecting to Server
               uses: appleboy/ssh-action@master
@@ -41,4 +33,4 @@ jobs:
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: cd ~ && cd /var/www/ $$ mkdir ${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}} && rm -r ${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}-${{ github.ref_name }} && git clone -b ${{ github.ref_name }} https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}-${{ github.ref_name }}
+                  script: cd ~ && cd /var/www/ && mkdir ${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}} && rm -r ${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}-${{ github.ref_name }} && git clone -b ${{ github.ref_name }} https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}-${{ github.ref_name }} && cd ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} && npm install && npm test && npm run build
