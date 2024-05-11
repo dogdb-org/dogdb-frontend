@@ -41,4 +41,4 @@ jobs:
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: cd ~ && cd /var/www/ && ls
+                  script: cd ~ && cd /var/www/ && git clone  https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }}-test
