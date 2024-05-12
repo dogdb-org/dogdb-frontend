@@ -43,6 +43,8 @@ jobs:
                         echo "this is a step branch ${{ steps.branch-names.outputs.current_branch }}"
 
                       elif [ ! -d "${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}" ]; then
-                        echo "the branch is not present"
-
+                        echo "the branch is not present" 
+                        
+                      elif [-d "${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}" -a -d  "${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}-${{ github.ref_name }}"]; then
+                      echo 'everything works'
                       fi
