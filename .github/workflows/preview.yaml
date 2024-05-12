@@ -38,7 +38,10 @@ jobs:
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   script: |
-                      if [ ${{ secrets.DOGDB_PORT}} == 22]; then
-                        echo ${{secrets.DOGDB_PORT}} 
-                      else 
-                       echo not 22
+                      cd /var/www/
+                      if [ -d "${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }}" ]; then
+                          cd ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }} && git pull && npm install && npm test && npm run build
+                      else
+                          git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }}
+                          cd ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }} && npm install && npm test && npm run build
+                      fi

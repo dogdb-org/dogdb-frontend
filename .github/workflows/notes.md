@@ -16,6 +16,8 @@ sudo ./svc.sh install
 sudo ./svc.sh status
 sudo ./svc.sh start
 chown -R www-data:www-data myFolder
+https://raddy.dev/blog/how-to-deploy-nextjs-app-on-a-vps-using-github-actions/
+
 
 run: |
 if [-d ${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}-${{ github.ref_name }}]; then
