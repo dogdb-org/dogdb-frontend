@@ -33,4 +33,11 @@ jobs:
                   username: ${{ secrets.DOGDB_USERNAME }}
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
-                  script: cd ~ && cd /var/www/ && rm -r ${{secrets.DOGDB_FRONTEND_FOLDER_NAME}} && git clone  https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }} && cd ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }} && npm install && npm test && npm run build
+                  script: |
+                      cd /var/www/
+                      if [ -d "${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }}" ]; then
+                          cd ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }} && git pull && npm install && npm test && npm run build
+                      else
+                          git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }}
+                          cd ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }} && npm install && npm test && npm run build
+                      fi

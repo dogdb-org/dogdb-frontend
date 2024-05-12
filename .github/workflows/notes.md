@@ -18,7 +18,6 @@ sudo ./svc.sh start
 chown -R www-data:www-data myFolder
 https://raddy.dev/blog/how-to-deploy-nextjs-app-on-a-vps-using-github-actions/
 
-
 run: |
 if [-d ${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}-${{ github.ref_name }}]; then
 cd ~ && cd /var/www/${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}} && rm -r ${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}-${{ github.ref_name }} && git clone -b ${{ github.ref_name }} https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}-${{ github.ref_name }} && cd ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} && npm install && npm test && npm run build

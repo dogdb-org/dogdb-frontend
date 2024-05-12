@@ -40,8 +40,7 @@ jobs:
                   script: |
                       cd /var/www/
                       if [ -d "${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }}" ]; then
-                          cd ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }} && git pull && npm install && npm test && npm run build
+                          echo "this file exists"
                       else
-                          git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }}
-                          cd ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }} && npm install && npm test && npm run build
+                          echo "this file does not exist"
                       fi
