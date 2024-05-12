@@ -23,7 +23,7 @@ jobs:
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   source: '.'
-                  target: '~/var/www/'
+                  target: '/var/www/'
 
             - name: Executing remote command
               uses: appleboy/ssh-action@master
