@@ -38,9 +38,12 @@ jobs:
                   port: ${{ secrets.DOGDB_PORT }}
                   key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
                   script: |
-                      cd /var/www/
-                      if [ -d "${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }}" ]; then
-                          echo "this file exists"
+                      cd ~ && cd /var/www/
+                      if [ -d "${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}" -a -d  "${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}-${{ github.ref_name }}" -a ]; then
+                        echo ${{ steps.branch-names.outputs.current_branch }}
+
+                      elif 
+
                       else
                           echo "this file does not exist"
                       fi
