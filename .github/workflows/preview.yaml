@@ -45,6 +45,4 @@ jobs:
                       elif [ ! -d "${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}" ]; then
                         echo "the branch is not present"
 
-                      else
-                          echo "this file does not exist"
                       fi
