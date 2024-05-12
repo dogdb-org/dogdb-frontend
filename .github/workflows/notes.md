@@ -25,3 +25,5 @@ cd ~ && cd /var/www/${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}} && git clone
 https://www.pluralsight.com/resources/blog/cloud/conditions-in-bash-scripting-if-statements
 
 Wb3rvTirMomt2wdf8Dun
+
+sed -i.bak -e 's!!#line_to_change_through_github_action.\*!!# [Site Preview](preview.dogdb.org/${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}/${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}-${{ github.ref_name }}) [![Build NextApp for branch ${{github.ref_name}}](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml/badge.svg?branch=${{ github.ref_name }})](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml)/!!' .github/pull_request_template.md && rm .github/pull_request_template.md.bak
