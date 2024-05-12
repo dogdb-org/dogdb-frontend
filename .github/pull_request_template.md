@@ -1,5 +1,3 @@
-# [![Pullrequest changes on Build  and Deploy](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/deploy.yml/badge.svg?branch=main&event=pull_request)](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/deploy.yml)
-
 #line_to_change_through_github_action
 
 # Thanks for contributing to 🐶 DogDB Your contribution is appreciated.
