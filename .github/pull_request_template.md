@@ -19,8 +19,6 @@
 -   [ ] This PR contains changes in the documentation
 -   [ ] The title of my pull request is a short description of the requested changes. -->
 
-## 📄 Note to reviewers (optional)
-
-<!-- Add notes to reviewers if applicable -->
+<!-- ## 📄 Highlight Note  (optional) -->
 
 ## 📷 Screenshots (optional)
