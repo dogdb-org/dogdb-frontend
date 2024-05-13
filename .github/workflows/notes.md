@@ -28,6 +28,6 @@ Wb3rvTirMomt2wdf8Dun
 
 sed -i.bak -e 's!!#line_to_change_through_github_action.\*!!# [Site Preview](preview.dogdb.org/${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}/${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}-${{ github.ref_name }}) [![Build NextApp for branch ${{github.ref_name}}](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml/badge.svg?branch=${{ github.ref_name }})](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml)/!!' .github/pull_request_template.md && rm .github/pull_request_template.md.bak
 
-sed -i.bak -e 's@Site_Preview.\*@Site_Preview - [Site Preview](preview.dogdb.org/${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}/${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}-${{ github.ref_name }}) [![Build NextApp for branch ${{github.ref_name}}](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml/badge.svg?branch=${{ github.ref_name }})](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml) @' .github/pull_request_template.md
+sed -i.bak -e 's@Site_Preview.\*@Site_Preview - [![Build NextApp Preview and Deploy](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml/badge.svg?branch=CD-deployment&event=push)](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml) @' .github/pull_request_template.md
 
 sed -i.bak -e 's@DirectoryIndex.\*@DirectoryIndex index.php@' .github/pull_request_template.md
