@@ -1,4 +1,6 @@
-Site_Preview - [Site Preview](preview.dogdb.org/${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}/${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}-${{ github.ref_name }}) [![Build NextApp for branch ${{github.ref_name}}](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml/badge.svg?branch=${{ github.ref_name }})](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml)
+Site_Preview test
+
+Site_Url test
 
 # Thanks for contributing to 🐶 DogDB Your contribution is appreciated.
 
