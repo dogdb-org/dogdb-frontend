@@ -1,0 +1,43 @@
+name: Build NextApp and Deploy
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [18.19.0]
+                # node-version: [20.x, 21.x]
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: connecting to Server
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.DOGDB_HOST}}
+                  username: ${{ secrets.DOGDB_USERNAME }}
+                  port: ${{ secrets.DOGDB_PORT }}
+                  key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
+                  source: '.'
+                  #   source: '.,!node_modules'
+                  target: '~/var/www/'
+
+            - name: Executing remote command
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.DOGDB_HOST}}
+                  username: ${{ secrets.DOGDB_USERNAME }}
+                  port: ${{ secrets.DOGDB_PORT }}
+                  key: ${{ secrets.DOGDB_PRIVATE_SSHKEY }}
+                  script: |
+                      cd ~ && cd /var/www/
+                      if [ -d "${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }}" ]; then
+                          cd ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }} && git pull && npm install && npm run build
+                      else
+                          git clone https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }}
+                          cd ${{ secrets.DOGDB_FRONTEND_FOLDER_NAME }} && npm install && npm run build
+                      fi

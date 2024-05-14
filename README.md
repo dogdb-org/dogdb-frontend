@@ -1,3 +1,20 @@
+[npm]: https://npmjs.com
+[node]: https://nodejs.org
+[build-badge]: https://img.shields.io/github/workflow/status/kentcdodds/cross-env/validate?logo=github&style=flat-square
+[build]: https://github.com/kentcdodds/cross-env/actions?query=workflow%3Avalidate
+[license-badge]: https://img.shields.io/npm/l/cross-env.svg?style=flat-square
+[license]: https://github.com/dogdb-org/dogdb-frontend/blob/main/LICENSE
+[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
+[coc]: https://github.com/dogdb-org/dogdb-frontend/blob/main/.github/CODE_OF_CONDUCT.md
+[emojis]: https://allcontributors.org/docs/en/emoji-key
+[all-contributors]: https://github.com/all-contributors/all-contributors
+
+[![Build NextApp and Deploy](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/deploy.yml/badge.svg?branch=main&event=push)](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/deploy.yml)
+[![MIT License][license-badge]][license]
+[![Code of Conduct][coc-badge]][coc]
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

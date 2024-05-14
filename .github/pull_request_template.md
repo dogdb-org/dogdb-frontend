@@ -1,4 +1,4 @@
-# Thanks for contributing to 🐶 DogDB Your contribution is appreciated.
+# Your contribution is appreciated.
 
 <!-- # 🛠️ Fixes issue #(for e.g. #24) -->
 
@@ -7,7 +7,7 @@
 -   ...
 -   ...
 
-## 🐶 Check List (Mark all the applicable boxes)
+<!-- ## 🐶 Check List (Mark all the applicable boxes) -->
 
 <!-- Mark all the applicable boxes. To mark the box as done follow the following conventions -->
 <!--
@@ -15,12 +15,10 @@
 [ ] - Not correct; marked as **not** done
 -->
 
--   [ ] My code follows the code style of this project.
+<!-- -   [ ] My code follows the code style of this project.
 -   [ ] This PR contains changes in the documentation
--   [ ] The title of my pull request is a short description of the requested changes.
+-   [ ] The title of my pull request is a short description of the requested changes. -->
 
-## 📄 Note to reviewers (optional)
-
-<!-- Add notes to reviewers if applicable -->
+<!-- ## 📄 Highlight Note  (optional) -->
 
 ## 📷 Screenshots (optional)
