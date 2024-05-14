@@ -21,10 +21,12 @@ https://raddy.dev/blog/how-to-deploy-nextjs-app-on-a-vps-using-github-actions/
 cd ${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}} && git pull origin ${{ steps.branch-names.outputs.current_branch }}" && npm install && npm test && npm run build
 
 cd ~ && cd /var/www/${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}} && git clone -b ${{ github.ref_name }} https://github.com/dogdb-org/dogdb-frontend.git ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }}-${{ github.ref_name }} && cd ${{ secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME }} && npm install && npm test && npm run build
-
+:ant:
 https://www.pluralsight.com/resources/blog/cloud/conditions-in-bash-scripting-if-statements
 
 Wb3rvTirMomt2wdf8Dun
+
+sudo chown -R adam dogdb-frontend/
 
 <!-- sed -i.bak -e 's@Site_Preview.*@Site_Preview test @' -e 's@Site_Url.*@Site_Url test @' .github/pull_request_template.md -->
 
