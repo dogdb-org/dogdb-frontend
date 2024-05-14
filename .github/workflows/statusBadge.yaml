@@ -15,4 +15,4 @@ jobs:
             - uses: mshick/add-pr-comment@v2
               with:
                   message: |
-                      '[![Build NextApp Preview and Deploy](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml/badge.svg?branch=${{github.ref_name}}&event=push)](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml)    [DogDB - ${{github.ref_name}} link](https://preview.dogdb.org/${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}/${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}-${{ github.ref_name }}/out)'
+                      [![Build NextApp Preview and Deploy](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml/badge.svg?branch=${{github.ref_name}}&event=push)](https://github.com/dogdb-org/dogdb-frontend/actions/workflows/preview.yaml)  <br/> <br/> <h1>[DogDB - ${{github.ref_name}} link](https://preview.dogdb.org/${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}/${{secrets.DOGDB_PREVIEW_FRONTEND_FOLDER_NAME}}-${{ github.ref_name }}/out)</h1>
