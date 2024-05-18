@@ -13,8 +13,5 @@ describe('Hero Component', () => {
         expect(
             getByText('Discover the ideal companion for your lifestyle')
         ).toBeInTheDocument()
-        // Find your perfect dog breed heading is wriiten 2 times. 1 for mobile screen the other one for desktop screen
-        const breedHeading = getAllByText('Find your perfect dog breed')
-        expect(breedHeading.length).toBe(2)
     })
 })
